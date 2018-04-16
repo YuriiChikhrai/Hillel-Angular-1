@@ -1,0 +1,12 @@
+{
+  "name": "E1",
+  "version": "1.0.0",
+  "description": "Class constructor",
+  "main": "test.js",
+  "scripts": {
+    "start": "node test.js"
+  },
+  "keywords": [],
+  "author": "Yurii.Chikhrai",
+  "license": "ISC"
+}
