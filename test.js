@@ -1,0 +1,61 @@
+const Student = require('./Student');
+const Group = require('./Group');
+
+const student1 = new Student("Yurii", "Chikhrai", 1992);
+console.log("Student:", student1.name);
+console.log("Age:", student1.age());
+student1.present();
+student1.addPoint(90);
+student1.absent();
+student1.absent();
+student1.absent();
+student1.present();
+student1.addPoint(90);
+student1.present();
+student1.addPoint(99);
+student1.present();
+student1.addPoint(90);
+student1.present();
+student1.addPoint(90);
+console.log("Average:", student1.average());
+console.log("Average Attend:", student1.averageAttend());
+console.log("Summary:", student1.summary());
+
+const student2 = new Student("Vasya", "Pupkin", 1991);
+console.log("Student:", student2.name);
+console.log("Age:", student2.age());
+student2.present();
+student2.addPoint(70);
+student2.absent();
+student2.present();
+student2.addPoint(80);
+student2.present();
+student2.addPoint(80);
+student2.present();
+student2.addPoint(90);
+student2.present();
+student2.addPoint(90);
+student2.present();
+student2.addPoint(85);
+console.log("Average:", student2.average());
+console.log("Average Attend:", student2.averageAttend());
+console.log("Summary:", student2.summary());
+
+const student3 = new Student("Alice", "Bob", 1980);
+
+const gr = new Group(student1, [student2]);
+gr.addStudent(student3);
+console.log(gr.attendance());
+console.log("Att Chikhrai", gr.attendance('Chikhrai'));
+console.log("Att Pupkin", gr.attendance('Pupkin'));
+console.log(gr.performance());
+console.log("Perf Chikhrai", gr.performance('Chikhrai'));
+console.log("Pert Pupkin", gr.performance('Pupkin'));
+
+gr.removeStudent(student3);
+console.log(gr.attendance());
+console.log("Att Chikhrai", gr.attendance('Chikhrai'));
+console.log("Att Pupkin", gr.attendance('Pupkin'));
+console.log(gr.performance());
+console.log("Perf Chikhrai", gr.performance('Chikhrai'));
+console.log("Perf Pupkin", gr.performance('Pupkin'));
